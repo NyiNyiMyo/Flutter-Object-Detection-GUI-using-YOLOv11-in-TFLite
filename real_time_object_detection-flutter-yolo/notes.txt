@@ -1,0 +1,22 @@
+# real_time_object_detection
+
+Real time object detection utilizing TensorFlow for Flutter in order to recognize and identify objects.
+Built within Android Studio for Android mobile devices.
+
+## Getting Started
+
+flutter --version
+flutter doctor
+
+flutter clean
+without dartcv4,
+flutter pub run build_runner build --delete-conflicting-outputs
+flutter pub get
+flutter pub upgrade --major-versions
+
+flutter run
+flutter run -d windows
+flutter run -d android
+
+flutter run --release
+flutter run --release -d windows

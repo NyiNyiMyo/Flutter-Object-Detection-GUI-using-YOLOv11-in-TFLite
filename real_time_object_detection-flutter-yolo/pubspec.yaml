@@ -1,0 +1,58 @@
+name: real_time_object_detection
+description: Real time object detection using tflite for Flutter.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+# 1. Production application dependencies go here
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  tflite_flutter: ^0.12.1
+  image: ^4.5.2
+  image_picker: ^1.1.2
+  # file_picker: ^12.0.0
+  camera: ^0.12.0+2
+  camera_windows: ^0.2.3
+  path_provider: ^2.1.5
+  dartcv4: ^2.2.1+4
+
+  # media_kit: ^1.1.11
+  # media_kit_video: ^2.0.1
+  # media_kit_libs_video: ^1.0.5
+
+
+# 2. Testing/Code-Gen items remain here
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.9
+
+hooks:
+  user_defines:
+    dartcv4:
+      include_modules:
+        - imgcodecs
+        - imgproc
+      exclude_modules:
+        - calib3d
+        - features2d
+        - objdetect
+        - photo
+        - stitching
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/labels.txt
+    - assets/ssd_mobilenet.tflite
+    - assets/models/yolo11n_float32.tflite
